@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Knowledge Bridge",
+  "version": "0.1.0",
+  "description": "YouTube transcript translation, AI summary, mind map, and Obsidian export.",
+  "permissions": ["storage", "activeTab", "sidePanel", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*", "https://api.supadata.ai/*", "https://api.openai.com/*", "https://api.deepseek.com/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "YouTube Knowledge Bridge"},
+  "side_panel": {"default_path": "sidepanel.html"},
+  "options_page": "options.html",
+  "content_scripts": [{"matches": ["https://www.youtube.com/watch*"], "js": ["content.js"]}]
+}
